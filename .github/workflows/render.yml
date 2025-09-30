@@ -7,11 +7,11 @@ on:
     pull_request:
       branches:
         - main
-
 jobs:
 
   deploy:
     name: Deploy to Render
+    needs: testing
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
