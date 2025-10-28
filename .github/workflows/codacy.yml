@@ -15,7 +15,6 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [3.11,3.12]
-    
     services:
       mysql:
         image: mysql:5.7
@@ -49,7 +48,7 @@ jobs:
       run: |
         pip install codacy-coverage
         coverage run -m pytest app/modules/ --ignore-glob='*selenium*'
-        coverage xml 
+        coverage xml
         python-codacy-coverage -r coverage.xml
       env:
         FLASK_ENV: testing
